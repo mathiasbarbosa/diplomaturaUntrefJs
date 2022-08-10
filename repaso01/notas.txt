@@ -1,0 +1,11 @@
+arrays => https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array
+ciclos => https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration
+operadores => https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Expressions_and_Operators
+tipos de datos => https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures
+estructura de control de flujo (if, else, else if) => https://uniwebsidad.com/libros/javascript/capitulo-3/estructuras-de-control-de-flujo
+
+articulo para entender porque no se usa var => https://es.javascript.info/var
+
+
+eventos en js => https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+localStorage => https://developer.mozilla.org/es/docs/Web/API/Window/localStorage

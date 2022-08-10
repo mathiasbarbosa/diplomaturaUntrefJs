@@ -1,0 +1,20 @@
+
+
+
+/* Repaso funciones sintaxis normal, anonima, flecha */ => https://es.javascript.info/function-basics
+
+Creación de un elemento HTML con JavaScript
+el método .createElement()
+
+
+ajuste de propiedades/atributos del elemento HTML => https://developer.mozilla.org/es/docs/Web/API/Element/setAttribute 
+
+
+el método .appendChild() https://www.w3schools.com/jsref/met_node_appendchild.asp
+el método .append() // insertar un array de elementos creados
+
+el método .remove()
+
+armar el DOM HTML a partir de la creación de un elemento dinámico
+Ejercitación: (40 minutos) crear y remover elementos HTML de forma dinámica
+
