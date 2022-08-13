@@ -1,0 +1,11 @@
+.containerPrincipal{
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerItem{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

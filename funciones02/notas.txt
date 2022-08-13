@@ -16,5 +16,7 @@ el método .append() // insertar un array de elementos creados
 el método .remove()
 
 armar el DOM HTML a partir de la creación de un elemento dinámico
+leer un array de objetos.
+pedir datos por un form
 Ejercitación: (40 minutos) crear y remover elementos HTML de forma dinámica
 
