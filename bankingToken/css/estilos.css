@@ -1,0 +1,45 @@
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.separate-side-left {
+    margin-left: 20px;
+}
+
+.lightgrey-text {
+    color: lightgrey;
+}
+
+.wide-80 {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+}
+
+h2 {
+    letter-spacing: 4px;
+}
+
+p {
+    font-size: xx-large;
+}
+.background-color {
+    background-color: whitesmoke;
+}
+
+.div-number {
+    padding: 40px;
+    border: 1px solid green;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-left: 10%;
+    margin-right: 10%;    
+}
+
+progress[value] {
+    width: 80%;
+    margin-top: 60px;
+}
+

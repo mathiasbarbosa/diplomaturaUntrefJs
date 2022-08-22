@@ -66,3 +66,39 @@
 
 //     alert("tu token de seguridad es " + numero)
 // })
+
+// import {productos} from 
+// console.log(productos);
+
+let formulario = document.querySelector("#formulario");
+const usuarios = [];
+
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault()
+    console.log(evento.target.children[0].value);
+    let nombreUsuario =  evento.target.children[0].value;
+
+
+    usuarios.push(nombreUsuario)
+    localStorage.setItem("arrayUsuarios", JSON.stringify(usuarios))
+    console.log(usuarios);
+})
+
+
+function pintarUsuarios() {
+    let div = document.querySelector("#contenedorUsuarios");
+    let recuperarLocal = JSON.parse(localStorage.getItem("arrayUsuarios"))
+
+    for (const usuario of recuperarLocal) {
+        div.innerHTML += `
+            <h3>${usuario}</h3>
+        
+        `
+    }
+
+}
+
+let botonCargar = document.querySelector("#cargarDatos")
+
+botonCargar.addEventListener("click", pintarUsuarios)
+
