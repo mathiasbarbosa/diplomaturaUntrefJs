@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap');
+
+* {
+    font-family: 'Shippori Antique B1', sans-serif;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.std-top-margin {
+    margin-top: 2%;
+}
+
+.std-bottom-margin {
+    margin-bottom: 2%;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+p {
+    /* margin: 2%; */
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+ul ol li table {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+footer {
+    background-color: lightblue;
+    padding: 1em;
+    padding-top: 3em;
+}
+
+strong {
+    font-weight: 800;
+}
+
+nav {
+    background-color: white;
+    padding: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li.menu {
+    text-transform: uppercase;
+    display: inline-flex;
+    text-align: center;
+    padding: 1em;
+    color: crimson;
+}
+
+li.menu:hover {
+    transition: all 0.2s ease-in;
+    background-color:tomato;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.header {
+    padding: 1em;
+    background-color: whitesmoke;
+    background-image: URL('/images/js-jq.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.shadow {
+    text-shadow: 3px 3px 2px grey;
+}
+
+.text-whitesmoke {
+    color: whitesmoke;
+}
+
+img.me {
+    filter: grayscale(1);
+    max-width: 240px;
+    border-radius: 50%;
+}
+
+img:hover {
+    transition: all 0.5s ease-in;
+    filter: grayscale(0);
+}
+
+div.me {
+    text-align: center;
+    width:100vw;
+    height:100vh; 
+}
+
+div.experiencia {
+    padding: 1em;
+    background-color: darkred;
+    color: whitesmoke;
+    width:100vw;
+    height:100vh; 
+}
+
+div.tecnologias {
+    padding: 1em;
+    background-color: darkmagenta;
+    color: whitesmoke;
+    width:100vw;
+    height:100vh; 
+}
+
+div.portfolio {
+    padding: 1em;
+    background-color: darkslateblue;
+    color: whitesmoke;
+    width:100vw;
+    height:100vh; 
+}
+
+div.contacto {
+    padding: 1em;
+    background-color: darkolivegreen;
+    color: whitesmoke;
+    width:100vw;
+    height:100vh; 
+}
+
+form {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: white;
+    display: block;
+}
+
+::placeholder {
+    color: lightslategray;
+    opacity: 1;
+}
+
+input, textarea {
+    color: whitesmoke;
+    margin-top: 2em;
+}
+
+.btn-enviar {
+    background-color: lightgreen;
+    color: gray;
+}
+
+.btn-enviar:hover {
+    background-color: darkgreen;
+}

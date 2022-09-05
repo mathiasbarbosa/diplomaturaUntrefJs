@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "X-HTML",
+        "descripcion": "XHTML es a XML como HTML es a SGML. Es decir, XHTML es un lenguaje de marcado que es similar al HTML, pero con un sintaxis más estricta. Dos versiones de XHTML han sido terminadas por el W3C: <br> XHTML 1.0 es HTML4 reformulado como una aplicación XML, y es compatible con versiones anteriores de HTML en casos limitados."
+    },
+    {
+        "nombre": "FLASH PLAYER",
+        "descripcion": "Adobe Flash Player es una aplicación informática para contenido creado en la plataforma de Adobe Flash, y englobada en la categoría de reproductor multimedia. Fue creado inicialmente por Macromedia y distribuido por Adobe Systems."
+    },
+    {
+        "nombre": "JQUERY",
+        "descripcion": "jQuery es una biblioteca multiplataforma de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web."
+    }
+]
