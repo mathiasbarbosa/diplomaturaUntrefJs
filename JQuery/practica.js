@@ -34,14 +34,24 @@ $(document).ready(function () {
                 <div class="card-body">
                     <p class="card-text">${elemento.nombre}</p>
                     <p class="card-text">${elemento.edad}</p>
+                    <button class="btn-eliminar">borrar</button>
                 </div>
                 </div>
             `)
             
         }
+        eliminar()
     }
 
 
 })
 
 
+function eliminar () {
+    $(".btn-eliminar").each( function(){
+       $(this).click(function(event){
+            console.dir(event.target);
+            
+        });
+    })
+}

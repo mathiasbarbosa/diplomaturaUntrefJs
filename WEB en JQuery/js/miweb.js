@@ -71,3 +71,18 @@ $("form").submit(function() {
     enviarFormulario();
     location.href = "#me"
 })
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    // instrucciones 
+
+})
+
+
+window.addEventListener("load", function(){
+
+})
+
+window.onload = () => {
+    // instrucciones
+}
