@@ -26,12 +26,13 @@ function request(){
 }
 
 
-
+let arrayItems;
 
 async function obtenerDatos() {
     try {
         document.querySelector("#root").innerHTML = "<h1> Cargando productos</h1> "
         let data = await request();
+        arrayItems.push()
         generarProductos(data)
         agregarEvento()
     } catch (error) {
