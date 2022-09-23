@@ -1,6 +1,7 @@
 import { Header } from "./components/Header.js"
 import { Main } from "./components/Main.js"
 import { Router } from "./components/Router.js"
+import { Search } from "./components/Search.js"
 import api from "./helpers/urls.js"
 
 export const App = () => {
@@ -10,6 +11,7 @@ export const App = () => {
     
     divRoot.innerHTML += `<h1> Primer sitio SPA </h1>`
     divRoot.appendChild(Header())
+    divRoot.appendChild(Search())
     divRoot.appendChild(Main())
 
     Router()

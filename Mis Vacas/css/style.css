@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400&display=swap');
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+}
+
+.div-image {
+    margin: 0%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.222), rgba(0, 0, 0, 0.1)), URL("../images/vacas.jpg");
+    /* filter: brightness(80%); */
+    /* transition: filter 1s ease-out; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    box-shadow: 0px 15px 20px lightgray;
+}
+
+.div-image:hover {
+    filter: brightness(105%);
+    transition: filter 1s ease-in;
+}
+
+.title-white {
+    font-size: 4em;
+}
+
+.p-font-size-large {
+    margin-top: -40px;
+    margin-bottom: 30px;
+    font-size: x-large;
+}
+
+button:hover {
+    filter: brightness(125%);
+}
+
+input[type=”date”] {
+    font-size: 44px;
+}
