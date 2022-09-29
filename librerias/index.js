@@ -45,7 +45,7 @@ formulario.addEventListener("submit", (unParametro) => {
 })
 
 let dateTime = luxon.DateTime;
-
+dateTime.
 console.log(    dateTime.diff() );
 // dateTime.fromISO("2017-05-15")    
 
@@ -63,3 +63,4 @@ let h1 = document.querySelector("#fecha");
 
 h1.innerHTML = `${hour}:${minute}:${second}`
 }, 1000);
+
