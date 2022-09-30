@@ -1,8 +1,21 @@
 // variables globales
 let formulario = document.querySelector("#formulario");
-let tbody = document.querySelector("#tbody")
+let tbody = document.querySelector("#tbody");
+let myModalEl = document.querySelector("#modalFormProducto")
+let inputNombre = document.querySelector("#nombre")
+let inputPrecio = document.querySelector("#precio")
+let inputStock = document.querySelector("#stock")
 console.log(formulario);
 
+let bandera = false;
+
+
+const actualizarEstado = () => {
+    if (bandera == true) {
+        return bandera = false
+    }
+    return bandera
+}
 // fetch - solicitudes
 const requestPost = async (data) => {
     try {
@@ -16,6 +29,7 @@ const requestPost = async (data) => {
         
         console.log(res);
         let json = await res.json();
+        console.log(json);
         if(!res.ok) {
             throw {status:res.statusText}
         }
@@ -49,6 +63,18 @@ const requestDelete = (url) => {
 
 }
 
+const requestPut = (url, data) => {
+
+        fetch(url, {
+        method: "PUT",
+        headers:{
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+    })
+
+}
+
 const generarTabla = (arrayProductos) => {
     arrayProductos.map( el => {
         let {id,nombre,precio,stock} = el
@@ -59,12 +85,13 @@ const generarTabla = (arrayProductos) => {
                                 <td>${precio}</td>
                                 <td>${stock}</td>
                                 <td>
-                                    <button>editar</button>
+                                    <button class="btn-editar btn btn-warning" data-id=${id} data-producto=${nombre} data-precio=${precio} data-stock=${stock} >editar</button>
                                     <button class="btn-eliminar btn btn-danger"" data-id=${id}>eliminar</button>
                                 </td>
                             </tr>
                             `
                         eventoEliminar()
+                        eventoEditar()
     } )
 }
 
@@ -78,12 +105,38 @@ const eventoEliminar = () => {
         })
     }
 }
+
+const eventoEditar = () => {
+let btns = document.querySelectorAll(".btn-editar")
+console.log(btns);
+
+    for (const btn of btns ) {
+        btn.addEventListener("click", (event) => {
+            console.dir(event);
+            console.dir(event.target)
+            console.dir(event.target.attributes)
+            console.dir(event.target.attributes[2])
+            console.dir(event.target.attributes[2].textContent)
+            let modal = new bootstrap.Modal(myModalEl)
+            modal.show(myModalEl)
+            inputNombre.value = event.target.attributes[2].textContent
+            inputPrecio.value = event.target.attributes[3].textContent
+            inputStock.value = event.target.attributes[4].textContent
+            let btnActualizar = document.querySelector("#formulario .btn-primary")
+            btnActualizar.setAttribute("data-id",event.target.attributes[1].textContent )
+            actualizarEstado()
+        })
+    }
+
+
+}
 // programa - eventos
 formulario.addEventListener("submit", (event) => {
     event.preventDefault()
-    let nombre = document.querySelector("#nombre").value;
-    let precio = document.querySelector("#precio").value;
-    let stock = document.querySelector("#stock").value;
+
+    let nombre = inputNombre.value;
+    let precio = inputPrecio.value;
+    let stock =  inputStock.value;
 
     let producto = {
         nombre,
@@ -91,9 +144,19 @@ formulario.addEventListener("submit", (event) => {
         stock
     }
 
-    requestPost(producto)
+
+    if (actualizarEstado()) {
+        requestPost(producto)
+    }else{
+        let btnActualizar = document.querySelector("#formulario .btn-primary")
+        console.dir(btnActualizar);
+         let id = btnActualizar.attributes[1].textContent
+        console.log(id);
+        requestPut(`https://6334c66fea0de5318a08cd43.mockapi.io/productos/${id}`, producto)
+        bandera = false
+    }
     formulario.reset()
-    location.reload()
+    // location.reload()
     console.log(producto);
 })
 
