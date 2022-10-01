@@ -10,12 +10,12 @@ console.log(formulario);
 let bandera = false;
 
 
-const actualizarEstado = () => {
-    if (bandera == true) {
-        return bandera = false
-    }
-    return bandera
-}
+// const actualizarEstado = () => {
+//     if (bandera == true) {
+//         return bandera = false
+//     }
+//     return bandera
+// }
 // fetch - solicitudes
 const requestPost = async (data) => {
     try {
@@ -63,15 +63,23 @@ const requestDelete = (url) => {
 
 }
 
-const requestPut = (url, data) => {
+const requestPut = async (url, data) => {
 
-        fetch(url, {
-        method: "PUT",
-        headers:{
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-    })
+      try {
+        let res =  await   fetch(url, {
+            method: "PUT",
+            headers:{
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(data)
+        })
+        console.dir(res);
+        if(!res.ok) {
+            throw {status:res.statusText}
+        }
+      } catch (error) {
+        alert("error al actualizar el elemento " + error.status)
+      }
 
 }
 
@@ -124,14 +132,14 @@ console.log(btns);
             inputStock.value = event.target.attributes[4].textContent
             let btnActualizar = document.querySelector("#formulario .btn-primary")
             btnActualizar.setAttribute("data-id",event.target.attributes[1].textContent )
-            actualizarEstado()
+            bandera = true
         })
     }
 
 
 }
 // programa - eventos
-formulario.addEventListener("submit", (event) => {
+formulario.addEventListener("submit", async (event) => {
     event.preventDefault()
 
     let nombre = inputNombre.value;
@@ -143,20 +151,20 @@ formulario.addEventListener("submit", (event) => {
         precio,
         stock
     }
-
-
-    if (actualizarEstado()) {
-        requestPost(producto)
+    
+    
+    if (bandera == false) {
+        await requestPost(producto)
     }else{
         let btnActualizar = document.querySelector("#formulario .btn-primary")
         console.dir(btnActualizar);
-         let id = btnActualizar.attributes[1].textContent
+        let id = btnActualizar.attributes[1].textContent
         console.log(id);
-        requestPut(`https://6334c66fea0de5318a08cd43.mockapi.io/productos/${id}`, producto)
+       await requestPut(`https://6334c66fea0de5318a08cd43.mockapi.io/productos/${id}`, producto)
         bandera = false
     }
     formulario.reset()
-    // location.reload()
+    location.reload()
     console.log(producto);
 })
 
