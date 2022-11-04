@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./estilos/style.css">
+    <script type="module" defer src="index.js"></script>
+</head>
+<body>
+    <header id="navHome">
+        <h1>ARGTienda</h1>
+        <nav>
+            <ul class="lista">
+                <li><a href="#">Home</a></li>
+                <li><a href="./pages/productos.html">Productos</a></li>
+                <li><a href="./pages/carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <main id="root">
+        <div id="buscador">
+            <input type="text" placeholder="Que producto estas buscando?" >
+            <select name="" id="select">
+                <option value="">-</option>
+                <option value="todos">Vet todos</option>
+                <option value="teclados">Teclados</option>
+                <option value="computadoras">Computadoras</option>
+                <option value="mouse">Mouse</option>
+            </select>
+        </div>
+        
+        <div id="containerCategorias">
+            <button class="btn-categoria">Teclados</button>
+            <button class="btn-categoria">Computadoras</button>
+            <button class="btn-categoria">Mouse</button>
+        </div>
+
+        <section id="contenedorProductos">
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <span>ARGTienda - 2022</span>
+    </footer>
+</body>
+</html>
